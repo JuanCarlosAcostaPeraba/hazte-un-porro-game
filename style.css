@@ -1,3 +1,63 @@
 * {
 	color: #499b4a;
 }
+
+body {
+	background-color: #ffffff;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+#header {
+	background-color: #f0f0f0;
+	padding: 20px;
+}
+
+#logo {
+	width: 100px; /* Ajusta el tamaño según tus necesidades */
+	height: auto;
+}
+
+#content {
+	margin-top: 20px;
+}
+
+#movableImage {
+	max-width: 100%;
+	height: auto;
+}
+
+#buttons {
+	margin-top: 20px;
+}
+
+.button {
+	display: block;
+	width: 150px; /* Ajusta el tamaño según tus necesidades */
+	margin: 10px auto;
+	padding: 10px;
+	background-color: #4caf50; /* Cambia el color según tus preferencias */
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: bold;
+	border: none;
+	cursor: pointer;
+}
+
+#inputBox {
+	margin-top: 20px;
+}
+
+#dataInput {
+	padding: 10px;
+	width: 200px; /* Ajusta el tamaño según tus necesidades */
+}
+
+#sendButton {
+	padding: 10px;
+	background-color: #008CBA; /* Cambia el color según tus preferencias */
+	color: #ffffff;
+	border: none;
+	cursor: pointer;
+}
