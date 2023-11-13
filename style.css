@@ -15,7 +15,7 @@ body {
 }
 
 #logo {
-	width: 100px; /* Ajusta el tamaño según tus necesidades */
+	width: 12em; /* Ajusta el tamaño según tus necesidades */
 	height: auto;
 }
 
@@ -79,6 +79,12 @@ textarea {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+}
+
+.ranking {
+	margin-top: 20px;
+	display: flex;
+
 }
 
 
