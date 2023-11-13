@@ -1,3 +1,7 @@
+:root {
+	--primary-color: #499b4a;
+}
+
 body {
 	background-color: #3d3e3d;
 	margin: 0;
@@ -24,9 +28,25 @@ body {
 	height: auto;
 }
 
-#buttons {
+main {
+	margin: 0;
+	width: 100%;
+	margin-top: 10rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.buttons {
 	margin-top: 20px;
-	display: grid;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 40%;
+	gap: 10px;
 }
 
 .button {
@@ -38,6 +58,7 @@ body {
 	text-decoration: none;
 	font-weight: bold;
 	border: none;
+	border-radius: 0.5rem;
 	cursor: pointer;
 }
 
@@ -45,13 +66,12 @@ body {
 	margin-top: 20px;
 }
 
-
 textarea {
-	padding: .4rem;
+	padding: 0.4rem;
 	resize: none;
 	overflow: hidden;
 	background: white;
-	color: #499b4a;
+	color: var(--primary-color);
 	font-size: 1rem;
 	font-weight: 600;
 	text-align: center;
