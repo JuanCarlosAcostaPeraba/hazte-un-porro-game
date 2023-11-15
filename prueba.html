@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking</title>
+    <style>
+        /* Estilos opcionales para mejorar la apariencia */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        #ranking {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ranking</h1>
+    <form id="form">
+        <label for="playerName">Nombre del jugador:</label>
+        <input type="text" id="playerName" required>
+        <label for="score">Puntuación:</label>
+        <input type="number" id="score" required>
+        <button type="button" onclick="addToRanking()">Agregar al ranking</button>
+    </form>
+    <div id="ranking"></div>
+
+    <script>
+        // Función para agregar al ranking
+        function addToRanking() {
+            // Obtener la información del jugador y la puntuación
+            var playerName = document.getElementById('playerName').value;
+            var score = document.getElementById('score').value;
+
+            // Verificar si ya hay datos en localStorage
+            var rankingData = JSON.parse(localStorage.getItem('ranking')) || [];
+
+            // Agregar la nueva entrada al arreglo
+            rankingData.push({ name: playerName, score: score });
+
+            // Ordenar el ranking por puntuación de mayor a menor
+            rankingData.sort((a, b) => b.score - a.score);
+
+            // Guardar el ranking actualizado en localStorage
+            localStorage.setItem('ranking', JSON.stringify(rankingData));
+
+            // Mostrar el ranking en la página
+            displayRanking();
+        }
+
+        // Función para mostrar el ranking en la página
+        function displayRanking() {
+            // Obtener el elemento del ranking
+            var rankingElement = document.getElementById('ranking');
+
+            // Obtener los datos del ranking desde localStorage
+            var rankingData = JSON.parse(localStorage.getItem('ranking')) || [];
+
+            // Crear la estructura HTML del ranking
+            var html = '<h2>Ranking Actual</h2><ol>';
+            for (var i = 0; i < rankingData.length; i++) {
+                html += '<li>' + rankingData[i].name + ' - ' + rankingData[i].score + '</li>';
+            }
+            html += '</ol>';
+
+            // Mostrar el ranking en la página
+            rankingElement.innerHTML = html;
+        }
+
+        // Mostrar el ranking al cargar la página
+        window.onload = displayRanking;
+    </script>
+</body>
+</html>
