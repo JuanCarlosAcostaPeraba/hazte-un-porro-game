@@ -1,9 +1,11 @@
 :root {
 	--primary-color: #499b4a;
+	--secondary-color: #f0f0f0;
+	--bg-color: #3d3e3d;
 }
 
 body {
-	background-color: #3d3e3d;
+	background-color: var(--bg-color);
 	margin: 0;
 	padding: 0;
 	text-align: center;
@@ -69,6 +71,7 @@ main {
 textarea {
 	padding: 0.4rem;
 	resize: none;
+	pointer-events: none;
 	overflow: hidden;
 	background: white;
 	color: var(--primary-color);
@@ -84,7 +87,4 @@ textarea {
 .ranking {
 	margin-top: 20px;
 	display: flex;
-
 }
-
-
